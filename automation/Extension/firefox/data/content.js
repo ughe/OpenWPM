@@ -339,6 +339,7 @@ instrumentObject(unsafeWindow.CanvasRenderingContext2D.prototype, "CanvasRenderi
 instrumentObject(unsafeWindow.RTCPeerConnection.prototype,"RTCPeerConnection", true);
 
 // window.location and document.location (redirects)
+// XXX Does not work. See Issue #52
 instrumentObjectProperty(unsafeWindow, "window", "location");
 instrumentObjectProperty(unsafeWindow.location, "window.location", "assign");
 instrumentObjectProperty(unsafeWindow.location, "window.location", "href");
