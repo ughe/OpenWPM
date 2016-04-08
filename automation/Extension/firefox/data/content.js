@@ -338,6 +338,14 @@ instrumentObject(unsafeWindow.CanvasRenderingContext2D.prototype, "CanvasRenderi
 // Access to webRTC
 instrumentObject(unsafeWindow.RTCPeerConnection.prototype,"RTCPeerConnection", true);
 
+// window.location and document.location (redirects)
+instrumentObjectProperty(unsafeWindow, "window", "location");
+instrumentObjectProperty(unsafeWindow.location, "window.location", "assign");
+instrumentObjectProperty(unsafeWindow.location, "window.location", "href");
+instrumentObjectProperty(document, "document", "location");
+instrumentObjectProperty(document.location, "document.location", "assign");
+instrumentObjectProperty(document.location, "document.location", "href");
+
 }
 
 })();

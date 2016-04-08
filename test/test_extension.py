@@ -1,10 +1,8 @@
 import sqlite3
-import tarfile
 import pytest
 import os
 
 from ..automation import TaskManager
-from ..automation.Errors import CommandExecutionError, ProfileLoadError
 import utilities
 import expected
 
